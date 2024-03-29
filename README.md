@@ -1,47 +1,60 @@
-# Getting Started with Create React App
+**User Management System**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### API Access Information
+I utilized https://reqres.in/ for user registration and data retrieval. To access the main page, please use the provided credentials:
+```
+{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}
+```
+Feel free to make use of this option to explore the application's functionality.
 
-## Available Scripts
+### Overview
+This project is a User Management System built using React, Redux, TypeScript, and CSS. It allows registered users to view a list of user cards on the homepage and access detailed information about each user by clicking on their respective card. The system is responsive and includes features for registration, login, user authentication, user listing, user details, and persistent liking of users.
 
-In the project directory, you can run:
+### Features
+- Registration and login functionality using email/password authentication.
+- Input validation for all user inputs, displaying error messages for invalid data.
+- Persistent user authentication using browser memory storage.
+- Logout functionality to clear user authentication token from browser memory.
+- Responsive design for seamless user experience across different devices.
+- User listing page displaying all registered users.
+- User details page showing specific user information.
+- Ability to like/unlike users, with likes persisting across page reloads.
 
-### `npm start`
+### Technologies Used
+- **React**: JavaScript library for building user interfaces.
+- **Redux**: State management library for managing application state.
+- **TypeScript**: Superset of JavaScript that adds static typing to the language.
+- **CSS**: Styling language used for designing the user interface.
+- **React Router**: Library for declarative routing in React applications.
+- **Axios**: Promise-based HTTP client for making API requests.
+- **JWT**: JSON Web Tokens used for user authentication.
+- **reqres.in API**: Mock API service used for simulating user data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/your_username/user-management-system.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd user-management-system
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Run the application:
+   ```
+   npm start
+   ```
+5. Open your web browser and visit `http://localhost:3000` to view the application.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# antipoffTestTask
+### Usage
+1. Register using your email and password.
+2. Explore the list of user cards on the homepage.
+3. Click on a user card to view detailed information about the user.
+4. Like or unlike users by clicking on the heart icon.
+5. Logout to clear your authentication token and log out of the system.
