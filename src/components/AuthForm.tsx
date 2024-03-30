@@ -23,7 +23,7 @@ const AuthForm: React.FC = () => {
   const navigate = useNavigate()
 
   const validateEmail = (email: string) => {
-    const isValid  = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+    const isValid  = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
     return isValid
   }
 
