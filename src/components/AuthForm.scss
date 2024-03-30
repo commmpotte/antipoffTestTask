@@ -73,6 +73,12 @@ $breakpoint-small: 768px;
 
 @media screen and (max-width: $breakpoint-small) {
   .form-group__input {
-    width: 343px;
+    width: 340px;
+  }
+  .registration-form-container {
+    height: auto;
+  }
+  .registration-form {
+    padding: 10px;
   }
 }

@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './AuthForm.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 import { useDispatch } from 'react-redux'
 import { setToken } from '../store/actions'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { RootState } from '../store/reducers/rootReducer'
 
 const AuthForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +17,8 @@ const AuthForm: React.FC = () => {
   const [emailError, setEmailError] = useState(false)
   const [serverResponse, setServerResponse] = useState('')
   const [passwordMatchError, setPasswordMatchError] = useState(false)
+  const [touchedEmail, setTouchedEmail] = useState(false)
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -37,15 +37,23 @@ const AuthForm: React.FC = () => {
       ...prevData,
       [name]: value,
     }))
+
+ 
+    if (name === 'email' && touchedEmail) {
+      setEmailError(!validateEmail(value))
+    }
+  }
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const { name } = e.target
+    if (name === 'email') {
+      setTouchedEmail(true)
+      setEmailError(!validateEmail(formData.email))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setEmailError(!validateEmail(formData.email))
-
-    if (!validateEmail(formData.email)) {
-      return
-    }
     if (formData.password !== formData.confirmPassword) {
       setPasswordMatchError(true)
       return
@@ -78,8 +86,6 @@ const AuthForm: React.FC = () => {
     }
   }
 
-
-
   return (
     <div className="registration-form-container">
       <form className="registration-form" onSubmit={handleSubmit} noValidate>
@@ -107,6 +113,7 @@ const AuthForm: React.FC = () => {
             id="email"
             name="email"
             value={formData.email}
+            onBlur={handleBlur}
             onChange={handleChange}
             className={`form-group__input ${
               emailError ? 'form-group__input--error' : ''

@@ -51,10 +51,10 @@ const Home: React.FC = () => {
     const likedUsers = likedUsersStateMemoized.likes.likedUsers
     if (likedUsers && likedUsers.includes(userId)) {
       dispatch(removeLike(userId))
-      console.log(userId, 'remove a LIKE!')
+      console.log('User #', userId, 'remove a LIKE!')
     } else {
       dispatch(addLike(userId))
-      console.log(userId, 'got a LIKE!')
+      console.log('User #', userId, 'got a LIKE!')
     }
   }
   return (
